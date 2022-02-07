@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NewPetFriend</string>
+
+    <!-- Splash screen -->
+    <string name="nome_splash">New Pet Friend</string>
+    <string name="imagem_logotipo">cao e gato</string>
 </resources>
