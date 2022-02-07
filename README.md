@@ -4,7 +4,7 @@
 ###### Docente: João Capinha
 ---
 
-> 202001352 
+> 202001352 Rodrigo Nogueira
 >
 > 202000806 Ricardo Reis
 >
