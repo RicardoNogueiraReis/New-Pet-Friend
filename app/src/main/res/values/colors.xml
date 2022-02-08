@@ -12,6 +12,7 @@
 
     <!-- Font Color -->
     <color name="cao">#e48144</color>
+    <color name="cao_light">#f1925b</color>
     <color name="gato">#fee2b5</color>
 
 </resources>
