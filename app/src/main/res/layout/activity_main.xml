@@ -22,15 +22,16 @@
         android:layout_height="410dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTextoApresentacao">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:orientation="horizontal"
-            tools:weightSum="1"
-            android:baselineAligned="false">
+            tools:weightSum="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,16 +42,16 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:contentDescription="@string/cao"
                     tools:ignore="ImageContrastCheck"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@drawable/dog" />
 
                 <Button
                     android:id="@+id/button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="58dp"
+                    android:layout_marginStart="60dp"
                     android:text="@string/caes" />
 
             </LinearLayout>
@@ -64,15 +65,15 @@
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:contentDescription="@string/imagegato"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@drawable/cat" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="58dp"
+                    android:layout_marginStart="60dp"
                     android:text="@string/gatos" />
             </LinearLayout>
         </LinearLayout>
@@ -90,11 +91,11 @@
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:contentDescription="@string/imageAmbos"
                     android:minHeight="50dp"
                     tools:ignore="ImageContrastCheck"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@drawable/ambos" />
 
                 <Button
                     android:id="@+id/button3"

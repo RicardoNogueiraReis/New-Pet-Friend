@@ -2,6 +2,7 @@ package pt.ips.pam.newpetfriend;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -49,9 +50,9 @@ public class LoginActivity extends AppCompatActivity {
         btnRegistar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!camposEstaoPreenchidos(email, password)){
+                if (!camposEstaoPreenchidos(email, password))
                     return;
-                }
+
                 guardarUtilizador();
                 email = (EditText) findViewById(R.id.editTextEmail);
                 email.setText("");
@@ -63,35 +64,37 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean camposEstaoPreenchidos(EditText email, EditText password){
-        boolean isEmailEmpty = email.getText().toString().isEmpty();
-        boolean isPasswordEmpty = password.getText().toString().isEmpty();
+        int isEmailEmpty = email.getText().toString().trim().isEmpty() ? 1 : 0;
+        int isPasswordEmpty = password.getText().toString().trim().isEmpty() ? 2 : 0;
 
-        if(isEmailEmpty && isPasswordEmpty){
-            Toast.makeText(LoginActivity.this, getResources().getText(R.string.erro_email_e_password_vazio), Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        else if(isEmailEmpty){
-            Toast.makeText(LoginActivity.this, getResources().getText(R.string.erro_email_vazio), Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        else if(isPasswordEmpty){
-            Toast.makeText(LoginActivity.this, getResources().getText(R.string.erro_password_vazio), Toast.LENGTH_SHORT).show();
-            return false;
+        switch(isEmailEmpty+isPasswordEmpty){
+            case 1:
+                Toast.makeText(LoginActivity.this, "@string/erro_email_vazio", Toast.LENGTH_SHORT).show();
+                return false;
+            case 2:
+                Toast.makeText(LoginActivity.this, "@string/erro_password_vazia", Toast.LENGTH_SHORT).show();
+                return false;
+            case 3:
+                Toast.makeText(LoginActivity.this, "@string/erro_email_e_password_vazio", Toast.LENGTH_SHORT).show();
+                return false;
         }
 
         return true;
     }
 
+
     public void guardarDados(){
         String email = "admin@ips.pt";
         String pass = "admin";
 
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sharedPref = getSharedPreferences("Utilizador", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPref.edit();
-        edit.putString(VALOR_EMAIL, email);
-        edit.putString(VALOR_PASS, pass);
 
+        User user = new User();
+        edit.putString(email, user.email);
+        edit.putString(pass, user.password);
         edit.commit();
+
     }
 
     public void guardarUtilizador(){
