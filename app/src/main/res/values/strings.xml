@@ -12,13 +12,21 @@
     <string name="registar">Registar</string>
     <string name="iniciar_sessao">Iniciar sessão</string>
 
-    <string name="erro_email_e_password_vazio">ERRO: </string>
+    <string name="erro_email_e_password_vazio">ERRO: Nenhum dos campos está preenchido</string>
     <string name="erro_email_vazio">ERRO: Email não foi introduzido</string>
-    <string name="erro_password_vazio"></string>
+    <string name="erro_password_vazio">ERRO: Palavra-passe não foi introduzida</string>
 
     <!-- Misc -->
     <string name="Lorem_Ipsum" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam elementum orci sed turpis dapibus auctor. Aenean malesuada nunc at efficitur dictum. Maecenas a quam non mi lobortis condimentum. Phasellus in feugiat lectus, eu rutrum lectus. Phasellus purus nulla, laoreet eget enim non, interdum molestie urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam aliquam metus erat, vel eleifend lorem aliquet quis. Donec placerat accumsan neque, eget feugiat ex tempor vel.</string>
     <string name="imagelogotipo">ImageLogotipo</string>
     <string name="imageanimal">ImageAnimal</string>
 
+    <!-- Main Activity -->
+    <string name="caes">Cães</string>
+    <string name="gatos">Gatos</string>
+    <string name="ambos">Ambos</string>
+    <string name="cao" translatable="false">cao</string>
+    <string name="textoInicial">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="imageAmbos" translatable="false">ambos</string>
+    <string name="imagegato" translatable="false">imageGato</string>
 </resources>
