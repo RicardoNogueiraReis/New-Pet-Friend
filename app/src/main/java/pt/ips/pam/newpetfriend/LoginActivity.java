@@ -27,16 +27,22 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private boolean verificarCampos(){
+    private boolean camposEstaoPreenchidos(){
         boolean isEmailEmpty = email.getText().toString().isEmpty();
         boolean isPasswordEmpty = password.getText().toString().isEmpty();
 
-        if(isEmailEmpty && isPasswordEmpty)
+        if(isEmailEmpty && isPasswordEmpty){
+            Toast.makeText(LoginActivity.this, "@string/erro_email_e_password_vazio", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if(isEmailEmpty){
             Toast.makeText(LoginActivity.this, "@string/erro_email_vazio", Toast.LENGTH_SHORT).show();
-        else if(isEmailEmpty)
-            Toast.makeText(LoginActivity.this, "@string/erro_email_vazio", Toast.LENGTH_SHORT).show();
-        else if(isPasswordEmpty)
+            return false;
+        }
+        else if(isPasswordEmpty){
             Toast.makeText(LoginActivity.this, "@string/erro_password_vazia", Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
         return true;
     }
