@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewPetFriend">
         <activity
+            android:name=".PaginaIndividualActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
