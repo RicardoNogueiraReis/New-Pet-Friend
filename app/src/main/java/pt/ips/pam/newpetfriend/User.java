@@ -8,6 +8,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
     public User(){
     }
 
@@ -23,7 +24,7 @@ public class User {
         this.email = email;
     }
 
-    public void setPassword(){
+    public void setPassword(String password){
         this.password = password;
     }
 

@@ -6,16 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-
-    private static final String VALOR_EMAIL = "EMAIL";
-    private static final String VALOR_PASS = "PASSWORD";
 
     EditText email;
     EditText password;
@@ -32,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.buttonIniciarSessao);
         btnRegistar = (Button) findViewById(R.id.buttonRegistar);
 
-        guardarDados();
+        guardarDadosPredefinidos();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,9 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
 
                 guardarUtilizador();
-                email = (EditText) findViewById(R.id.editTextEmail);
                 email.setText("");
-                password = (EditText) findViewById(R.id.editTextPalavraPasse);
                 password.setText("");
                 Toast.makeText(LoginActivity.this, "Efetue o login com a conta criada!", Toast.LENGTH_SHORT).show();
             }
@@ -83,45 +77,42 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void guardarDados(){
+    public void guardarDadosPredefinidos(){
         String email = "admin@ips.pt";
         String pass = "admin";
 
         SharedPreferences sharedPref = getSharedPreferences("Utilizador", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPref.edit();
 
-        User user = new User();
-        edit.putString(email, user.email);
-        edit.putString(pass, user.password);
+        edit.putString(email + pass + "data", email + "\n" + pass);
         edit.commit();
 
     }
 
     public void guardarUtilizador(){
-        EditText editEmail = findViewById(R.id.editTextEmail);
-        EditText editPass = findViewById(R.id.editTextPalavraPasse);
-        String email = editEmail.getText().toString();
-        String pass = editPass.getText().toString();
+        String getEmail = email.getText().toString();
+        String getPass = password.getText().toString();
 
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sharedPref = getSharedPreferences("Utilizador", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPref.edit();
-        edit.putString(VALOR_EMAIL, email);
-        edit.putString(VALOR_PASS, pass);
 
+        edit.putString(getEmail + getPass + "data", getEmail + "\n" + getPass);
         edit.commit();
     }
 
     public boolean lerDados(){
 
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        EditText editEmail = findViewById(R.id.editTextEmail);
-        EditText editPass = findViewById(R.id.editTextPalavraPasse);
-        String email = editEmail.getText().toString();
-        String pass = editPass.getText().toString();
+        SharedPreferences sharedPref = getSharedPreferences("Utilizador", Context.MODE_PRIVATE);
 
-        if (!email.equals(sharedPref.getString(VALOR_EMAIL, "")) || !pass.equals(sharedPref.getString(VALOR_PASS, ""))) 
+        String getEmail = email.getText().toString();
+        String getPass = password.getText().toString();
+
+        String utilizador = sharedPref.getString(getEmail + getPass + "data", "ERRO");
+
+        if(utilizador.equals("ERRO"))
             return false;
-        else
-            return true;
+
+        return true;
+
     }
 }
