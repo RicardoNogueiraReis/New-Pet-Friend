@@ -37,9 +37,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
+                if(!lerDados())
+                    return;
+                
                 Intent mainActivity = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(mainActivity);
+                Toast.makeText(LoginActivity.this, "Admin", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -103,5 +106,19 @@ public class LoginActivity extends AppCompatActivity {
         edit.putString(VALOR_PASS, pass);
 
         edit.commit();
+    }
+
+    public boolean lerDados(){
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        EditText editEmail = findViewById(R.id.editTextEmail);
+        EditText editPass = findViewById(R.id.editTextPalavraPasse);
+        String email = editEmail.getText().toString();
+        String pass = editPass.getText().toString();
+
+        if (!email.equals(sharedPref.getString(VALOR_EMAIL, "")) || !pass.equals(sharedPref.getString(VALOR_PASS, ""))) 
+            return false;
+        else
+            return true;
     }
 }
