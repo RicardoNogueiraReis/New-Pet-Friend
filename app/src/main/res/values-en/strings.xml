@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NewPetFriend</string>
+    <string name="imagem_logotipo">dog and cat</string>
+    <string name="email">Email:</string>
+    <string name="palavra_passe">Password</string>
+    <string name="exemplo_email">JohnDoe@mail.com</string>
+    <string name="registar">Register</string>
+    <string name="iniciar_sessao">LogIn</string>
+</resources>

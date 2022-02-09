@@ -1,7 +1,18 @@
 <resources>
-    <string name="app_name">NewPetFriend</string>
+    <string name="app_name" translatable="false">NewPetFriend</string>
 
     <!-- Splash screen -->
-    <string name="nome_splash">New Pet Friend</string>
+    <string name="nome_splash" translatable="false">New Pet Friend</string>
     <string name="imagem_logotipo">cao e gato</string>
+
+    <!-- Activity_Login -->
+    <string name="email">Email:</string>
+    <string name="palavra_passe">Palavra-passe:</string>
+    <string name="exemplo_email">ZeNinguem@mail.com</string>
+    <string name="registar">Registar</string>
+    <string name="iniciar_sessao">Iniciar sessão</string>
+
+    <!-- Misc -->
+    <string name="Lorem_Ipsum" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam elementum orci sed turpis dapibus auctor. Aenean malesuada nunc at efficitur dictum. Maecenas a quam non mi lobortis condimentum. Phasellus in feugiat lectus, eu rutrum lectus. Phasellus purus nulla, laoreet eget enim non, interdum molestie urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam aliquam metus erat, vel eleifend lorem aliquet quis. Donec placerat accumsan neque, eget feugiat ex tempor vel.</string>
+
 </resources>
