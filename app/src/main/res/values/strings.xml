@@ -12,7 +12,7 @@
     <string name="registar">Registar</string>
     <string name="iniciar_sessao">Iniciar sessão</string>
 
-    <string name="erro_email_e_password_vazio">ERRO: Nenhum dos campos está preenchido!</string>
+    <string name="erro_email_e_password_vazio">ERRO: Nenhum dos campos está preenchido</string>
     <string name="erro_email_vazio">ERRO: Email não foi introduzido</string>
     <string name="erro_password_vazio">ERRO: Palavra-passe não foi introduzido</string>
 
