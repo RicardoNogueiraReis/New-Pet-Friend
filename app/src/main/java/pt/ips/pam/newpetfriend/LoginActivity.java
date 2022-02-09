@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
                 
                 Intent mainActivity = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(mainActivity);
-                Toast.makeText(LoginActivity.this, "Admin", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -50,9 +50,6 @@ public class LoginActivity extends AppCompatActivity {
                     return;
 
                 guardarUtilizador();
-                email.setText("");
-                password.setText("");
-                Toast.makeText(LoginActivity.this, "Efetue o login com a conta criada!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -90,26 +87,42 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void guardarUtilizador(){
-        String getEmail = email.getText().toString();
+        String getEmail = email.getText().toString().trim();
         String getPass = password.getText().toString();
 
         SharedPreferences sharedPref = getSharedPreferences("Utilizador", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPref.edit();
 
+        String[] pop = sharedPref.getString(getEmail + getPass + "data", "").split("\n");
+
+        if(pop[0].equals(getEmail) && pop[1].equals(getPass)){
+            Toast.makeText(LoginActivity.this,
+                    getResources().getText(R.string.erro_utilizador_ja_existe), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         edit.putString(getEmail + getPass + "data", getEmail + "\n" + getPass);
         edit.commit();
+
+
+        email.setText("");
+        password.setText("");
+        Toast.makeText(LoginActivity.this,
+                        "Efetue o login com a conta criada!",
+                        Toast.LENGTH_SHORT).show();
+
     }
 
     public boolean lerDados(){
-
         SharedPreferences sharedPref = getSharedPreferences("Utilizador", Context.MODE_PRIVATE);
 
         String getEmail = email.getText().toString();
         String getPass = password.getText().toString();
+        String mensagemErro = getResources().getString(R.string.erro_utilizador_nao_encontrado);
 
-        String utilizador = sharedPref.getString(getEmail + getPass + "data", "ERRO");
+        String utilizador = sharedPref.getString(getEmail + getPass + "data", mensagemErro);
 
-        if(utilizador.equals("ERRO"))
+        if(utilizador.equals(mensagemErro))
             return false;
 
         return true;

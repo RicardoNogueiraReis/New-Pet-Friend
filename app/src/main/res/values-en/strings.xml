@@ -9,8 +9,12 @@
     <string name="caes">Dogs</string>
     <string name="gatos">Cats</string>
     <string name="ambos">Both</string>
-    <string name="textoInicial">Lorem</string>
     <string name="erro_email_e_password_vazio">ERROR: Neither of the text fields were inserted</string>
     <string name="erro_email_vazio">ERROR: Email was not inserted</string>
-    <string name="erro_password_vazio">ERROR: Password was not inserted</string>
+    <string name="imageanimal">Animal Image</string>
+    <string name="imagelogotipo">Logo Image</string>
+    <string name="erro_utilizador_nao_encontrado">ERROR: Email or password is incorrect</string>
+    <string name="cao" translatable="false">dog</string>
+    <string name="erro_password_vazia">ERROR: Password was not inserted</string>
+    <string name="erro_utilizador_ja_existe">ERROR: User already exists</string>
 </resources>
