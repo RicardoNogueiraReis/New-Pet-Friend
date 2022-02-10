@@ -43,9 +43,8 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:contentDescription="@string/cao"
-                    tools:ignore="ImageContrastCheck"
-                    tools:srcCompat="@drawable/dog" />
+                    android:contentDescription="@string/imageanimal"
+                    app:srcCompat="@drawable/dog" />
 
                 <Button
                     android:id="@+id/button"
@@ -67,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@string/imagegato"
-                    tools:srcCompat="@drawable/cat" />
+                    app:srcCompat="@drawable/cat" />
 
                 <Button
                     android:id="@+id/button2"
@@ -93,9 +92,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@string/imageAmbos"
-                    android:minHeight="50dp"
-                    tools:ignore="ImageContrastCheck"
-                    tools:srcCompat="@drawable/ambos" />
+                    app:srcCompat="@drawable/ambos"
+                    tools:minHeight="50dp" />
 
                 <Button
                     android:id="@+id/button3"
