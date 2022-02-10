@@ -111,13 +111,12 @@ public class Animal {
 
     public boolean isCastrado() { return castrado; }
 
-    public boolean isCastradoVerbose() {
+    public String isCastradoVerbose() {
         if(castrado)
             return "Sim";
-        return "Não"
-    }
 
-    public String getDoencaIndex(int i) { return doencas.get(i); }
+        return "Não";
+    }
 
     public String getInstituicao() { return instituicao; }
 
@@ -131,7 +130,7 @@ public class Animal {
                 + ", genero=" + genero
                 + ", raca=" + raca
                 + ", vacinado=" + isVacinadoVerbose()
-                + ", castrado=" + getDoencasPorTexto()
+                + ", castrado=" + isCastradoVerbose()
                 + ", instituicao=" + instituicao + "]";
 
     }

@@ -12,7 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="@string/Lorem_Ipsum"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="@string/intro"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
@@ -20,7 +24,7 @@
     <LinearLayout
         android:layout_width="431dp"
         android:layout_height="410dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="19dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,9 +47,8 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:contentDescription="@string/cao"
-                    tools:ignore="ImageContrastCheck"
-                    tools:srcCompat="@drawable/dog" />
+                    android:contentDescription="@string/imageanimal"
+                    app:srcCompat="@drawable/dog" />
 
                 <Button
                     android:id="@+id/button"
@@ -67,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@string/imagegato"
-                    tools:srcCompat="@drawable/cat" />
+                    app:srcCompat="@drawable/cat" />
 
                 <Button
                     android:id="@+id/button2"
@@ -93,9 +96,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@string/imageAmbos"
-                    android:minHeight="50dp"
-                    tools:ignore="ImageContrastCheck"
-                    tools:srcCompat="@drawable/ambos" />
+                    app:srcCompat="@drawable/ambos"
+                    tools:minHeight="50dp" />
 
                 <Button
                     android:id="@+id/button3"
