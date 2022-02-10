@@ -60,13 +60,19 @@ public class LoginActivity extends AppCompatActivity {
 
         switch(isEmailEmpty+isPasswordEmpty){
             case 1:
-                Toast.makeText(LoginActivity.this, "@string/erro_email_vazio", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,
+                        getResources().getText(R.string.erro_email_vazio),
+                        Toast.LENGTH_SHORT).show();
                 return false;
             case 2:
-                Toast.makeText(LoginActivity.this, "@string/erro_password_vazia", Toast.LENGTH_SHORT).show();
-                return false;
+                Toast.makeText(LoginActivity.this,
+                        getResources().getText(R.string.erro_password_vazia),
+                        Toast.LENGTH_SHORT).show();
+                return false; 
             case 3:
-                Toast.makeText(LoginActivity.this, "@string/erro_email_e_password_vazio", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,
+                        getResources().getText(R.string.erro_email_e_password_vazio),
+                        Toast.LENGTH_SHORT).show();
                 return false;
         }
 
@@ -95,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
 
         String[] pop = sharedPref.getString(getEmail + getPass + "data", "").split("\n");
 
-        if(pop[0].equals(getEmail) && pop[1].equals(getPass)){
+        if(sharedPref.contains(getEmail)){
             Toast.makeText(LoginActivity.this,
                     getResources().getText(R.string.erro_utilizador_ja_existe), Toast.LENGTH_SHORT).show();
             return;
