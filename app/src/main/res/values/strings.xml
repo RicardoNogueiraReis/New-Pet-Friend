@@ -28,7 +28,7 @@
     <string name="caes">Cães</string>
     <string name="gatos">Gatos</string>
     <string name="ambos">Ambos</string>
-    <string name="cao">cao</string>
+    <string name="cao" translatable="false">cao</string>
     <string name="imageAmbos" translatable="false">ambos</string>
     <string name="imagegato" translatable="false">imageGato</string>
 </resources>
