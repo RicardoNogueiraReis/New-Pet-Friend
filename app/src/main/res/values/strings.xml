@@ -24,6 +24,7 @@
     <string name="imageanimal">ImageAnimal</string>
 
     <!-- Main Activity -->
+    <string name="intro">NewPetFriend visa a procurar uma família para os nossos animais, dando uma nova oportunidade de serem felizes</string>
     <string name="caes">Cães</string>
     <string name="gatos">Gatos</string>
     <string name="ambos">Ambos</string>
@@ -31,3 +32,5 @@
     <string name="imageAmbos" translatable="false">ambos</string>
     <string name="imagegato" translatable="false">imageGato</string>
 </resources>
+
+<!-- NewPetFriend visa a procurar uma nova familia para os nossos animais! Dê uma outra oportunidade de serem ambos felizes. -->
