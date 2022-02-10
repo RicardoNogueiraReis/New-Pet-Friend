@@ -39,12 +39,12 @@ public class Animal {
 
     public void setId(int id) { this.id = id; }
 
-    public void setTipoAnimal(String tipoAnimal) throws Exception {
+    public void setTipoAnimal(String tipoAnimal) throws NullPointerException {
         switch (tipoAnimal){
             case "Gato": case "Cão":
                 this.tipoAnimal = tipoAnimal;
             default:
-                throw new Exception("ERRO: Tipo de animal tem de ser ou cão ou gato");
+                throw new NullPointerException("ERRO: Tipo de animal tem de ser ou cão ou gato");
         }
     }
 
@@ -55,19 +55,19 @@ public class Animal {
         this.nomeAnimal = nomeAnimal;
     }
 
-    public void setIdade(int idade) throws Exception {
+    public void setIdade(int idade) throws NullPointerException {
         if(idade < 0)
-            throw new Exception("ERRO: Idade não pode ser menor que 0");
+            throw new NullPointerException("ERRO: Idade não pode ser menor que 0");
 
         this.idade = idade;
     }
 
-    public void setGenero(String genero) throws Exception {
+    public void setGenero(String genero) throws NullPointerException {
         switch(genero){
             case "Macho": case "Femea":
                 this.genero = genero;
             default:
-                throw new Exception("ERRO: Genero tem de ser ou Macho ou Fêmea");
+                throw new NullPointerException("ERRO: Genero tem de ser ou Macho ou Fêmea");
         }
     }
 
@@ -86,6 +86,10 @@ public class Animal {
             throw new NullPointerException();
 
         this.instituicao = instituicao;
+    }
+
+    public void setCastrado(boolean castrado){
+        this.castrado = castrado;
     }
 
     public int getId() { return id; }

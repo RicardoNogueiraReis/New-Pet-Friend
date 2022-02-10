@@ -16,9 +16,8 @@
     <string name="erro_utilizador_nao_encontrado">ERROR: Email or password is incorrect</string>
     <string name="erro_password_vazia">ERROR: Password was not inserted</string>
     <string name="erro_utilizador_ja_existe">ERROR: User already exists</string>
-<<<<<<< HEAD
+
     <string name="efetue_login_conta_criada">Login with the registered account</string>
-=======
     <string name="intro">NewPetFriend looks for a family to our animals, giving to them a new opportunity for happiness</string>
->>>>>>> 7bea07c236379657d7d683ee71e42635b45a4417
-</resources>
+
+    </resources>

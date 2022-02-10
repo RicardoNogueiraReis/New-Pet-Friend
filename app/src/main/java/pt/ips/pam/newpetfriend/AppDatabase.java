@@ -20,4 +20,3 @@ public abstract class AppDatabase extends RoomDatabase {
     }
     public abstract AnimalDao animalDao();
 }
-
