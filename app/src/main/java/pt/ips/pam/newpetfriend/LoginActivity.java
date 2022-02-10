@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this,
                         getResources().getText(R.string.erro_password_vazia),
                         Toast.LENGTH_SHORT).show();
-                return false; 
+                return false;
             case 3:
                 Toast.makeText(LoginActivity.this,
                         getResources().getText(R.string.erro_email_e_password_vazio),
@@ -99,8 +99,6 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("Utilizador", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPref.edit();
 
-        String[] pop = sharedPref.getString(getEmail + getPass + "data", "").split("\n");
-
         if(sharedPref.contains(getEmail)){
             Toast.makeText(LoginActivity.this,
                     getResources().getText(R.string.erro_utilizador_ja_existe), Toast.LENGTH_SHORT).show();
@@ -110,13 +108,12 @@ public class LoginActivity extends AppCompatActivity {
         edit.putString(getEmail + getPass + "data", getEmail + "\n" + getPass);
         edit.commit();
 
-
         email.setText("");
         password.setText("");
-        Toast.makeText(LoginActivity.this,
-                        "Efetue o login com a conta criada!",
-                        Toast.LENGTH_SHORT).show();
 
+        Toast.makeText(LoginActivity.this,
+                getResources().getText(R.string.efetue_login_conta_criada),
+                        Toast.LENGTH_SHORT).show();
     }
 
     public boolean lerDados(){
