@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!lerDados())
+                if(!lerDados() || !validarEmail(email))
                     return;
                 
                 Intent mainActivity = new Intent(LoginActivity.this, MainActivity.class);
@@ -46,12 +47,25 @@ public class LoginActivity extends AppCompatActivity {
         btnRegistar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!camposEstaoPreenchidos(email, password))
+                if (!camposEstaoPreenchidos(email, password) || !validarEmail(email))
                     return;
 
                 guardarUtilizador();
             }
         });
+    }
+
+    private boolean validarEmail(EditText email) {
+        String emailInput = email.getText().toString();
+        if(!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
+            Toast.makeText(LoginActivity.this,
+                    getResources().getText(R.string.erro_email_invalido),
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+
     }
 
     private boolean camposEstaoPreenchidos(EditText email, EditText password){
