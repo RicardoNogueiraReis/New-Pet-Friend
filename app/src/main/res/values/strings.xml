@@ -33,6 +33,7 @@
     <string name="imageAmbos" translatable="false">ambos</string>
     <string name="imagegato" translatable="false">imageGato</string>
     <string name="erro_email_invalido">ERRO: Email inserido não é válido</string>
+    <string name="title_activity_maps_new_pet_friend">MapsNewPetFriend</string>
 </resources>
 
-<!-- NewPetFriend visa a procurar uma nova familia para os nossos animais! Dê uma outra oportunidade de serem ambos felizes. -->
+    <!-- NewPetFriend visa a procurar uma nova familia para os nossos animais! Dê uma outra oportunidade de serem ambos felizes. -->
