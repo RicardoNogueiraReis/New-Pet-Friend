@@ -1,14 +1,17 @@
 package pt.ips.pam.newpetfriend;
 
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.util.ArrayList;
-
 @Entity
-public class Animal {
+public class Animal implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -37,6 +40,18 @@ public class Animal {
     @ColumnInfo(name = "instituicao")
     private String instituicao;
 
+    public Animal(String tipoAnimal, String nomeAnimal, int idade, String genero, String raca,
+                  boolean vacinado, boolean castrado, String instituicao) {
+        this.tipoAnimal = tipoAnimal;
+        this.nomeAnimal = nomeAnimal;
+        this.idade = idade;
+        this.genero = genero;
+        this.raca = raca;
+        this.vacinado = vacinado;
+        this.castrado = castrado;
+        this.instituicao = instituicao;
+    }
+
     public void setId(int id) { this.id = id; }
 
     public void setTipoAnimal(String tipoAnimal) throws NullPointerException {
@@ -44,7 +59,7 @@ public class Animal {
             case "Gato": case "Cão":
                 this.tipoAnimal = tipoAnimal;
             default:
-                throw new NullPointerException("ERRO: Tipo de animal tem de ser ou cão ou gato");
+                throw new NullPointerException("ERRO: Tipo de animal tem de ser cão ou gato");
         }
     }
 
@@ -139,4 +154,42 @@ public class Animal {
 
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    @Override
+    public void writeToParcel(Parcel dest, int i) {
+        dest.writeInt(id);
+        dest.writeString(nomeAnimal);
+        dest.writeInt(idade);
+        dest.writeBoolean(vacinado);
+
+    }
+
+    public static final Creator<Animal> CREATOR = new Creator<Animal>() {
+        @Override
+        public Animal createFromParcel(Parcel in) {
+            return new Animal(in);
+        }
+
+        @Override
+        public Animal[] newArray(int size) {
+            return new Animal[size];
+        }
+    };
+
+    protected Animal(Parcel in) {
+        id = in.readInt();
+        tipoAnimal = in.readString();
+        nomeAnimal = in.readString();
+        idade = in.readInt();
+        genero = in.readString();
+        raca = in.readString();
+        vacinado = in.readByte() != 0;
+        castrado = in.readByte() != 0;
+        instituicao = in.readString();
+    }
 }

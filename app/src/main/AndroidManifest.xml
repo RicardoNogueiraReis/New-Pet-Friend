@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.ips.pam.newpetfriend">
 
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+=======
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+>>>>>>> de7d7a2e07181ef365352ccca49e9cbafcb1decd
 
     <application
         android:allowBackup="true"
@@ -12,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_npf_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewPetFriend">
-
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

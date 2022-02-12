@@ -1,6 +1,5 @@
 package pt.ips.pam.newpetfriend;
 
-import androidx.annotation.NonNull;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -28,6 +27,5 @@ public interface AnimalDao {
 
     @Delete
     void delete(Animal animal);
-
 
 }

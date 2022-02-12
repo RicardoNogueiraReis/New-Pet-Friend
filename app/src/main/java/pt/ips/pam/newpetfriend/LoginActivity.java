@@ -39,8 +39,9 @@ public class LoginActivity extends AppCompatActivity {
                 if(!lerDados() || !validarEmail(email))
                     return;
                 
-                Intent mainActivity = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(mainActivity);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.putExtra(MainActivity.CURRENT_USER, email.getText().toString());
+                startActivity(intent);
             }
         });
 
