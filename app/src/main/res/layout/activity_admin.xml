@@ -32,7 +32,7 @@
                         android:id="@+id/radioButtonCao"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/checkbox_cao" />
+                        android:text="@string/cao" />
 
                     <RadioButton
                         android:id="@+id/radioButtonGato"

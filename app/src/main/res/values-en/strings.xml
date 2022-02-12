@@ -20,5 +20,28 @@
     <string name="efetue_login_conta_criada">Login with the registered account</string>
     <string name="intro">NewPetFriend looks for a family to our animals, giving to them a new opportunity for happiness</string>
     <string name="erro_email_invalido">ERRO: Inserted Email is not valid</string>
+    <string name="idade">Age</string>
+    <string name="nome">Name</string>
+    <string name="vacinado">Vacinated</string>
+    <string name="sim">Yes</string>
+    <string name="nao">No</string>
+    <string name="adicionar">Add</string>
+    <string name="delete">Delete</string>
+    <string name="pesquisar">Search</string>
+    <string name="animal_list">Animal List</string>
+    <string name="field_name">Name:</string>
+    <string name="macho">Male</string>
+    <string name="instituicao">Instituition</string>
+    <string name="gato">Cat</string>
+    <string name="raca">Breed</string>
+    <string name="femea">Female</string>
+    <string name="castrado">Neutered</string>
+    <string name="administrador">Administrator</string>
+    <string name="animal_atualizado">Animal Updated</string>
+    <string name="animal_inserido">Animal Inserted</string>
+    <string name="animal_apagado">Animal deleted</string>
+    <string name="animal_encontrado">Animal found</string>
+    <string name="animal_nao_encontrado">Animal not found</string>
+    <string name="cao">Dog</string>
 
 </resources>

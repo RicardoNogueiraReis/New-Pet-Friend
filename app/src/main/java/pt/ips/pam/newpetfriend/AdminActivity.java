@@ -139,12 +139,14 @@ public class AdminActivity extends AppCompatActivity  implements
                 animal.setId(animais.get(indiceUpdate).getId());
                 db.animalDao().update(animal);
                 runOnUiThread(() ->
-                        Toast.makeText(this, "Animal atualizado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getResources().getText(R.string.animal_atualizado).toString(),
+                                Toast.LENGTH_SHORT).show()
                 );
             } else {
                 db.animalDao().insert(animal);
                 runOnUiThread(() ->
-                        Toast.makeText(this, "Animal inserido", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getResources().getText(R.string.animal_inserido).toString(),
+                                Toast.LENGTH_SHORT).show()
                 );
             }
         });
@@ -174,11 +176,13 @@ public class AdminActivity extends AppCompatActivity  implements
                 db.animalDao().delete(animal);
                 runOnUiThread(() -> {
                     mostrarAnimal(null);
-                    Toast.makeText(this, "Animal apagado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getResources().getText(R.string.animal_apagado).toString(),
+                            Toast.LENGTH_SHORT).show();
                 });
             } else {
                 runOnUiThread(() ->
-                        Toast.makeText(this, "Animal não encontrado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getResources().getText(R.string.animal_nao_encontrado).toString(),
+                                Toast.LENGTH_SHORT).show()
                 );
             }
         });
@@ -221,7 +225,6 @@ public class AdminActivity extends AppCompatActivity  implements
             case "Fêmea":
                 radioMacho.setChecked(false);
                 radioFemea.setChecked(true);
-
         }
 
         editRaca.setText((CharSequence) animal.getTipoAnimal());
@@ -239,11 +242,13 @@ public class AdminActivity extends AppCompatActivity  implements
 
             if (indiceDelete != -1)
                 runOnUiThread(() ->
-                        Toast.makeText(this, "Animal encontrado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getResources().getText(R.string.animal_encontrado).toString(),
+                                Toast.LENGTH_SHORT).show()
                 );
             else
                 runOnUiThread(() ->
-                        Toast.makeText(this, "Animal não encontrado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getResources().getText(R.string.animal_nao_encontrado).toString(),
+                                Toast.LENGTH_SHORT).show()
                 );
         });
     }

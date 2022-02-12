@@ -30,7 +30,6 @@
     <string name="caes">Cães</string>
     <string name="gatos">Gatos</string>
     <string name="ambos">Ambos</string>
-    <string name="cao" translatable="false">cao</string>
     <string name="imageAmbos" translatable="false">ambos</string>
     <string name="imagegato" translatable="false">imageGato</string>
     <string name="title_activity_maps_new_pet_friend" translatable="false">MapsNewPetFriend</string>
@@ -40,14 +39,14 @@
     <string name="nome">Nome</string>
     <string name="vacinado">Vacinado</string>
     <string name="sim">Sim</string>
-    <string name="nao">Nao</string>
+    <string name="nao">Não</string>
     <string name="adicionar">Adicionar</string>
-    <string name="delete">Delete</string>
+    <string name="delete">Apagar</string>
     <string name="pesquisar">Pesquisar</string>
     <string name="animal_list">Lista animais</string>
 
-    <string name="field_name">Name:</string>
-    <string name="checkbox_cao">Cão</string>
+    <string name="field_name">Nome:</string>
+    <string name="cao">Cão</string>
     <string name="macho">Macho</string>
     <string name="instituicao">Instituição</string>
     <string name="gato">Gato</string>
@@ -56,6 +55,11 @@
     <string name="castrado">Castrado</string>
     <string name="administrador">Administrador</string>
 
+    <string name="animal_atualizado">Animal atualizado</string>
+    <string name="animal_inserido">Animal inserido</string>
+    <string name="animal_apagado">Animal apagado</string>
+    <string name="animal_encontrado">Animal encontrado</string>
+    <string name="animal_nao_encontrado">Animal não encontrado</string>
 
 </resources>
 
