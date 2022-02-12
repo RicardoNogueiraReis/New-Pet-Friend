@@ -2,7 +2,7 @@
 <resources>
     <string name="imagem_logotipo">dog and cat</string>
     <string name="email">Email:</string>
-    <string name="palavra_passe">Password</string>
+    <string name="palavra_passe">Password:</string>
     <string name="exemplo_email">JohnDoe@mail.com</string>
     <string name="registar">Register</string>
     <string name="iniciar_sessao">LogIn</string>
@@ -19,5 +19,6 @@
 
     <string name="efetue_login_conta_criada">Login with the registered account</string>
     <string name="intro">NewPetFriend looks for a family to our animals, giving to them a new opportunity for happiness</string>
+    <string name="erro_email_invalido">ERRO: Inserted Email is not valid</string>
 
-    </resources>
+</resources>
