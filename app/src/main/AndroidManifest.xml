@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.ips.pam.newpetfriend">
 
+<<<<<<< HEAD
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+=======
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+>>>>>>> de7d7a2e07181ef365352ccca49e9cbafcb1decd
 
     <application
         android:allowBackup="true"
