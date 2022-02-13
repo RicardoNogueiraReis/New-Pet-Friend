@@ -43,5 +43,6 @@
     <string name="animal_encontrado">Animal found</string>
     <string name="animal_nao_encontrado">Animal not found</string>
     <string name="cao">Dog</string>
+    <string name="erro_idade_menor_que_zero">ERROR: Age can\'t be less than zero</string>
 
 </resources>

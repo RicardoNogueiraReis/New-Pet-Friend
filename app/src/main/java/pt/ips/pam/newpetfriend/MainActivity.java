@@ -17,7 +17,6 @@ import java.util.concurrent.Executors;
 public class MainActivity extends AppCompatActivity {
     private AppDatabase db;
     private final ExecutorService executorService = Executors.newCachedThreadPool();
-    /*private Button button;*/
 
     public static final String CURRENT_USER = "CURRENT_USER";
 
@@ -31,19 +30,16 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        //botão para testar mapa
-        /*button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button btnAmbos = (Button) findViewById(R.id.btnAmbos);
+
+        btnAmbos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMap();
+                Intent intent = new Intent(MainActivity.this, AnimalListActivity.class);
+                //intent.putExtra(MainActivity.CURRENT_USER, email.getText().toString());
+                startActivity(intent);
             }
-        });*/
-    }
-
-    public void openMap(){
-        Intent intent = new Intent(this, MapsNewPetFriend.class);
-        startActivity(intent);
+        });
     }
 
     @Override

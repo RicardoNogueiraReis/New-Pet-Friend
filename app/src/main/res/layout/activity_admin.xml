@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gato"
     tools:context=".AdminActivity">
 
     <ScrollView
@@ -32,13 +33,15 @@
                         android:id="@+id/radioButtonCao"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/cao" />
+                        android:text="@string/cao"
+                        android:textColor="@color/black" />
 
                     <RadioButton
                         android:id="@+id/radioButtonGato"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/gato" />
+                        android:text="@string/gato"
+                        android:textColor="@color/black" />
 
                 </RadioGroup>
 
@@ -94,13 +97,15 @@
                         android:id="@+id/radioButtonMacho"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/macho" />
+                        android:text="@string/macho"
+                        android:textColor="@color/black" />
 
                     <RadioButton
                         android:id="@+id/radioButtonFemea"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/femea" />
+                        android:text="@string/femea"
+                        android:textColor="@color/black" />
                 </RadioGroup>
             </LinearLayout>
 
@@ -131,14 +136,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="100dp"
-                    android:text="@string/vacinado" />
+                    android:text="@string/vacinado"
+                    android:textColor="@color/black" />
 
                 <CheckBox
                     android:id="@+id/checkBoxCastrado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:text="@string/castrado" />
+                    android:text="@string/castrado"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
