@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -83,7 +84,6 @@ public class AdminActivity extends AppCompatActivity  implements
 
     }
 
-
     private boolean camposEstaoVazios(){
 
         boolean[] checkCampos = {
@@ -106,7 +106,7 @@ public class AdminActivity extends AppCompatActivity  implements
         return false;
     }
 
-    private void guardarAnimal() {
+    private void guardarAnimal() throws NumberFormatException {
 
         //validar os campos para verificar se estão preenchidos
         if (camposEstaoVazios())
@@ -116,8 +116,17 @@ public class AdminActivity extends AppCompatActivity  implements
         String tipoAnimal = radioCao.isChecked() ? "Cão" : "Gato";
         String nome = editNome.getText().toString().trim();
 
-        int idade = Integer.parseInt(editIdade.getText().toString().trim());
-
+        int idade = 0;
+        try {
+            idade = Integer.parseInt(editIdade.getText().toString().trim());
+            if(idade < 0)
+                throw new NumberFormatException(getResources()
+                        .getText(R.string.erro_idade_menor_que_zero).toString());
+        }catch(NumberFormatException e){
+            Toast.makeText(this, e.getMessage(),
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
         // Se for macho então não é fêmea e vice-versa
         String genero = radioMacho.isChecked() ? "Macho" : "Fêmea";
         String raca = editRaca.getText().toString().trim();

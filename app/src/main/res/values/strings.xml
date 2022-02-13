@@ -55,6 +55,8 @@
     <string name="castrado">Castrado</string>
     <string name="administrador">Administrador</string>
 
+    <string name="erro_idade_menor_que_zero">ERRO: Idade não pode ser menor que zero!</string>
+
     <string name="animal_atualizado">Animal atualizado</string>
     <string name="animal_inserido">Animal inserido</string>
     <string name="animal_apagado">Animal apagado</string>
