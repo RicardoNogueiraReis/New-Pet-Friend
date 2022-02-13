@@ -16,7 +16,6 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     private AppDatabase db;
-    private final ExecutorService executorService = Executors.newCachedThreadPool();
     /*private Button button;*/
 
     public static final String CURRENT_USER = "CURRENT_USER";

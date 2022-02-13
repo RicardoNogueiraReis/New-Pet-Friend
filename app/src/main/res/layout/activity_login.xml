@@ -41,6 +41,7 @@
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
+        android:text="@string/debug_admin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
@@ -81,6 +82,7 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:text="@string/debug_admin_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
         tools:ignore="SpeakableTextPresentCheck" />

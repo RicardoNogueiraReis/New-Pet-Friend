@@ -38,7 +38,6 @@ public class AdminActivity extends AppCompatActivity  implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-
         db = AppDatabase.getInstance(this);
 
         radioCao = findViewById(R.id.radioButtonCao);

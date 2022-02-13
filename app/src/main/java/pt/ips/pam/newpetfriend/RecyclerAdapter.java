@@ -1,5 +1,6 @@
 package pt.ips.pam.newpetfriend;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     private ArrayList<Animal> animalList;
 
     public RecyclerAdapter(ArrayList<Animal> animalList){
-        this.animalList = animalList;
+        if(animalList.isEmpty() || animalList == null)
+            Log.d("POOOOOOOP", animalList.get(0).getNomeAnimal());
+        else
+            this.animalList = animalList;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

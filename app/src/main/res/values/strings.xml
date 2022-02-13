@@ -67,6 +67,8 @@
     <string name="animal_apagado">Animal apagado</string>
     <string name="animal_encontrado">Animal encontrado</string>
     <string name="animal_nao_encontrado">Animal não encontrado</string>
+    <string name="debug_admin">admin@ips.pt</string>
+    <string name="debug_admin_password">admin</string>
 
 </resources>
 
