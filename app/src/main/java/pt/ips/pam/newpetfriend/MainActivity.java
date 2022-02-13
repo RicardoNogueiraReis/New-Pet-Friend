@@ -25,7 +25,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button btnAmbos = (Button) findViewById(R.id.btnAmbos);
 
+        btnAmbos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AnimalListActivity.class);
+                //intent.putExtra(MainActivity.CURRENT_USER, email.getText().toString());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
