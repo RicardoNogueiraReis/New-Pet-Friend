@@ -34,7 +34,6 @@ public class MapsNewPetFriend extends FragmentActivity implements GoogleMap.OnMy
         ActivityCompat.OnRequestPermissionsResultCallback,
         GoogleMap.OnInfoWindowClickListener {
 
-    private static final String TAG = "MapsActivity";
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private boolean mPermissionDenied = false;
     private GoogleMap mMap;

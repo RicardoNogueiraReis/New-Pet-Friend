@@ -16,25 +16,23 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     private AppDatabase db;
+
     /*private Button button;*/
+    private final ExecutorService executorService = Executors.newCachedThreadPool();
 
     public static final String CURRENT_USER = "CURRENT_USER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.logotipo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         setContentView(R.layout.activity_main);
 
         Button btnAmbos = (Button) findViewById(R.id.btnAmbos);
-
-        //botão para testar mapa
-        /*button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openMap();
-            }
-        });*/
 
         btnAmbos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,11 +67,5 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-
     }
-
-    /*public void openMap(){
-        Intent intent = new Intent(this, MapsNewPetFriend.class);
-        startActivity(intent);
-    }*/
 }

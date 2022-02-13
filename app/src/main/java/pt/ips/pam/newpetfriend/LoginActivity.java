@@ -23,6 +23,11 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.logotipo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         setContentView(R.layout.activity_login);
         
         email = (EditText) findViewById(R.id.editTextEmail);
