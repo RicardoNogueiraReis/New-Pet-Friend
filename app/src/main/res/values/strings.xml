@@ -52,9 +52,9 @@
 
     <string name="field_name">Nome:</string>
     <string name="cao">Cão</string>
+    <string name="gato">Gato</string>
     <string name="macho">Macho</string>
     <string name="instituicao">Instituição</string>
-    <string name="gato">Gato</string>
     <string name="raca">Raça</string>
     <string name="femea">Fêmea</string>
     <string name="castrado">Castrado</string>
@@ -70,7 +70,15 @@
     <string name="debug_admin" translatable="false">admin@ips.pt</string>
     <string name="debug_admin_password" translatable="false">admin</string>
 
-    <!--  -->
+    <!-- activity_pagina_individual -->
+    <string name="nomeIndividual">Nome:</string>
+    <string name="idadeIndividual">Idade:</string>
+    <string name="placeholder_text">placeholder_text</string>
+    <string name="generoIndividual">Género:</string>
+    <string name="racaIndividual">Raça:</string>
+    <string name="vacinadoIndividual">Vacinado:</string>
+    <string name="castradoIndividual">Castrado:</string>
+    <string name="instituicaoIndividual">Instituição:</string>
 
 </resources>
 

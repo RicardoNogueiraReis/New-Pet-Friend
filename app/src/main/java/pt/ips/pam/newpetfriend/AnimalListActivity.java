@@ -1,5 +1,6 @@
 package pt.ips.pam.newpetfriend;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -8,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
@@ -32,6 +36,7 @@ public class AnimalListActivity extends AppCompatActivity {
         db = AppDatabase.getInstance(this);
 
         recyclerView = findViewById(R.id.recyclerViewAnimais);
+
         animalList = new ArrayList<>();
 
         Bundle extras = getIntent().getExtras();
@@ -68,7 +73,7 @@ public class AnimalListActivity extends AppCompatActivity {
     }
 
     private void setAdapter(){
-        RecyclerAdapter adapter = new RecyclerAdapter(animalList);
+        RecyclerAdapter adapter = new RecyclerAdapter(animalList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
