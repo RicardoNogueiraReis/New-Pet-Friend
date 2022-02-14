@@ -51,7 +51,7 @@
                     app:srcCompat="@drawable/dog" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonCao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="60dp"
@@ -73,7 +73,7 @@
                     app:srcCompat="@drawable/cat" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/buttonGato"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="60dp"
@@ -100,7 +100,7 @@
                     tools:minHeight="50dp" />
 
                 <Button
-                    android:id="@+id/btnAmbos"
+                    android:id="@+id/buttonAmbos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="170dp"

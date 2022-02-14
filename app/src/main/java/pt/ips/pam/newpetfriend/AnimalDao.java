@@ -19,6 +19,9 @@ public interface AnimalDao {
     @Query("SELECT * FROM Animal WHERE nome_animal LIKE :nomeAnimal")
     List<Animal> findByName(String nomeAnimal);
 
+    @Query("SELECT * FROM Animal WHERE tipo_animal LIKE :tipoAnimal")
+    List<Animal> findByAnimalType(String tipoAnimal);
+
     @Insert
     void insert (Animal... animals);
 

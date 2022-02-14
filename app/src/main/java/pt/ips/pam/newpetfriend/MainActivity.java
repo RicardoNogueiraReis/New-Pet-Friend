@@ -2,9 +2,7 @@ package pt.ips.pam.newpetfriend;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,13 +30,31 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        Button btnAmbos = (Button) findViewById(R.id.btnAmbos);
+        Button btnCao = (Button) findViewById(R.id.buttonCao);
+        Button btnGato = (Button) findViewById(R.id.buttonGato);
+        Button btnAmbos = (Button) findViewById(R.id.buttonAmbos);
+        Intent intent = new Intent(MainActivity.this, AnimalListActivity.class);
+
+        btnCao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent.putExtra(AnimalListActivity.ANIMAL_TYPE, "Cão");
+                startActivity(intent);
+            }
+        });
+
+        btnGato.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent.putExtra(AnimalListActivity.ANIMAL_TYPE, "Gato");
+                startActivity(intent);
+            }
+        });
 
         btnAmbos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AnimalListActivity.class);
-                //intent.putExtra(MainActivity.CURRENT_USER, email.getText().toString());
+                intent.putExtra(AnimalListActivity.ANIMAL_TYPE, "ambos");
                 startActivity(intent);
             }
         });
@@ -46,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
 
         Bundle extras = getIntent().getExtras();
         if(extras.getString(CURRENT_USER).equals("admin@ips.pt"))

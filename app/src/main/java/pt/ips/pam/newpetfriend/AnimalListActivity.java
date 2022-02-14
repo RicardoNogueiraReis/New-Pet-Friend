@@ -21,6 +21,8 @@ public class AnimalListActivity extends AppCompatActivity {
     private AppDatabase db;
     private ExecutorService executorService;
 
+    public static final String ANIMAL_TYPE = "ANIMAL_TYPE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +32,23 @@ public class AnimalListActivity extends AppCompatActivity {
         db = AppDatabase.getInstance(this);
 
         recyclerView = findViewById(R.id.recyclerViewAnimais);
+        animalList = new ArrayList<>();
+
+        Bundle extras = getIntent().getExtras();
 
         executorService.execute(() -> {
-            animalList = new ArrayList<>(db.animalDao().getAll());
+            String animalFiltro = extras.getString(ANIMAL_TYPE);
+            switch(animalFiltro){
+                case "ambos":
+                    animalList = new ArrayList<>(db.animalDao().getAll());
+                    break;
+                case "Cão":
+                    animalList = new ArrayList<>(db.animalDao().findByAnimalType(animalFiltro));
+                    break;
+                case "Gato":
+                    animalList = new ArrayList<>(db.animalDao().findByAnimalType(animalFiltro));
+            }
+
         });
 
         executorService.shutdown();

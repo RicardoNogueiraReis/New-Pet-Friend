@@ -28,7 +28,7 @@
     <!--Mapa -->
     <string name="permission_rationale_location">Estas permissões são necessárias para que a aplicação funcione correctamente.</string>
     <string name="location_permission_denied">Estas permissões são necessárias para que a aplicação funcione correctamente. Por favor tente de novo e dê as permissões necessárias à aplicação. Se as permissões foram negadas de forma definitiva poderá alterar essa decisão manualmente nas definições do seu dispositivo.</string>
-    <string name="permission_required_toast">Location permission is required.</string>
+    <string name="permission_required_toast">Permissão de localização é necessária.</string>
 
     <!-- Main Activity -->
     <string name="intro">NewPetFriend visa a procurar uma família para os nossos animais, dando uma nova oportunidade de serem felizes</string>
@@ -67,8 +67,10 @@
     <string name="animal_apagado">Animal apagado</string>
     <string name="animal_encontrado">Animal encontrado</string>
     <string name="animal_nao_encontrado">Animal não encontrado</string>
-    <string name="debug_admin">admin@ips.pt</string>
-    <string name="debug_admin_password">admin</string>
+    <string name="debug_admin" translatable="false">admin@ips.pt</string>
+    <string name="debug_admin_password" translatable="false">admin</string>
+
+    <!--  -->
 
 </resources>
 

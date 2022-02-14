@@ -15,11 +15,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     private ArrayList<Animal> animalList;
 
+
     public RecyclerAdapter(ArrayList<Animal> animalList){
-        if(animalList.isEmpty() || animalList == null)
-            Log.d("POOOOOOOP", animalList.get(0).getNomeAnimal());
-        else
-            this.animalList = animalList;
+        this.animalList = animalList;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
