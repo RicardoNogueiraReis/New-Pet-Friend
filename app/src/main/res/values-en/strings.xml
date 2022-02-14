@@ -19,7 +19,7 @@
 
     <string name="efetue_login_conta_criada">Login with the registered account</string>
     <string name="intro">NewPetFriend looks for a family to our animals, giving to them a new opportunity for happiness</string>
-    <string name="erro_email_invalido">ERRO: Inserted Email is not valid</string>
+    <string name="erro_email_invalido">ERROR: Inserted Email is not valid</string>
     <string name="idade">Age</string>
     <string name="nome">Name</string>
     <string name="vacinado">Vacinated</string>
@@ -47,5 +47,13 @@
     <string name="permission_required_toast">Location permission is required.</string>
     <string name="permission_rationale_location">These permissions are required for the application to run correctly.</string>
     <string name="location_permission_denied">These permissions are required for the application to run correctly. Please try again and enable the necessary application permissions. If these permissions were denied previously, you can enable them manually in the system settings.</string>
+    <string name="nomeIndividual">Name:</string>
+    <string name="idadeIndividual">Age:</string>
+    <string name="generoIndividual">Gender:</string>
+    <string name="racaIndividual">Breed:</string>
+    <string name="vacinadoIndividual">Vaccinated:</string>
+    <string name="castradoIndividual">Neutered:</string>
+    <string name="instituicaoIndividual">Instituition:</string>
+    <string name="animal">Animal:</string>
 
 </resources>

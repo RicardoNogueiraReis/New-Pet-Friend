@@ -70,10 +70,14 @@
     <string name="debug_admin" translatable="false">admin@ips.pt</string>
     <string name="debug_admin_password" translatable="false">admin</string>
 
+    <!-- item_animal_recycler -->
+    <string name="smaller_placeholder_text" translatable="false">ph_text</string>
+    <string name="animal">Animal:</string>
+
     <!-- activity_pagina_individual -->
     <string name="nomeIndividual">Nome:</string>
     <string name="idadeIndividual">Idade:</string>
-    <string name="placeholder_text">placeholder_text</string>
+    <string name="placeholder_text" translatable="false">placeholder_text</string>
     <string name="generoIndividual">Género:</string>
     <string name="racaIndividual">Raça:</string>
     <string name="vacinadoIndividual">Vacinado:</string>
