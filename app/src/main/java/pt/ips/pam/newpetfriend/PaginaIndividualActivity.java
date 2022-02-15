@@ -47,32 +47,32 @@ public class PaginaIndividualActivity extends AppCompatActivity {
     }
 
     private void receberDadosDoAnimal() {
-        Bundle extras = getIntent().getExtras();
-        nome.setText(extras.getString(ANIMAL_NAME));
-        idade.setText((CharSequence) extras.getString(ANIMAL_AGE));
+Bundle extras = getIntent().getExtras();
+nome.setText(extras.getString(ANIMAL_NAME));
+idade.setText((CharSequence) extras.getString(ANIMAL_AGE));
 
-        String generoOutput = extras.getString(ANIMAL_GENDER).equals("Macho") ?
-                                getResources().getText(R.string.macho).toString() :
-                                getResources().getText(R.string.femea).toString();
+String generoOutput = extras.getString(ANIMAL_GENDER).equals("Macho") ?
+        getResources().getText(R.string.macho).toString() :
+        getResources().getText(R.string.femea).toString();
 
-        genero.setText(generoOutput);
+genero.setText(generoOutput);
 
-        raca.setText(String.valueOf(extras.getString(ANIMAL_BREED)));
+raca.setText(String.valueOf(extras.getString(ANIMAL_BREED)));
 
-        //getResources().getText(R.string.cao).toString()
+//getResources().getText(R.string.cao).toString()
 
-        String vacinadoOutput = extras.getString(ANIMAL_VACCINATED).equals("Sim") ?
-                getResources().getText(R.string.sim).toString() :
-                getResources().getText(R.string.nao).toString();
+String vacinadoOutput = extras.getString(ANIMAL_VACCINATED).equals("Sim") ?
+        getResources().getText(R.string.sim).toString() :
+        getResources().getText(R.string.nao).toString();
 
-        vacinado.setText(vacinadoOutput);
+vacinado.setText(vacinadoOutput);
 
-        String castradoOutput = extras.getString(ANIMAL_CASTRATED).equals("Sim") ?
-                getResources().getText(R.string.sim).toString() :
-                getResources().getText(R.string.nao).toString();
+String castradoOutput = extras.getString(ANIMAL_CASTRATED).equals("Sim") ?
+        getResources().getText(R.string.sim).toString() :
+        getResources().getText(R.string.nao).toString();
 
-        castrado.setText(castradoOutput);
+castrado.setText(castradoOutput);
 
-        instituicao.setText(extras.getString(ANIMAL_INSTITUTION));
+instituicao.setText(extras.getString(ANIMAL_INSTITUTION));
     }
 }

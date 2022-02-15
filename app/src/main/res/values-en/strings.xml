@@ -56,5 +56,6 @@
     <string name="instituicaoIndividual">Instituition:</string>
     <string name="animal">Animal:</string>
     <string name="localizacao_de_instituicoes">Location of Institutions</string>
+    <string name="erro_inesperado">ERROR: An unexpected error ocurred</string>
 
 </resources>

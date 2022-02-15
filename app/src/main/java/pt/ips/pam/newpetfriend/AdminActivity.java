@@ -10,13 +10,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class AdminActivity extends AppCompatActivity  implements
+public class AdminActivity extends AppCompatActivity implements
         AnimalListDialogFragment.AnimalListDialogFragmentListener {
 
     private AppDatabase db;
@@ -54,11 +53,9 @@ public class AdminActivity extends AppCompatActivity  implements
         Button buttonAdd = findViewById(R.id.buttonAdicionar);
         buttonAdd.setOnClickListener(view -> guardarAnimal());
 
-        //vamos associar o método apagarUser() ao clique no botao delete
         Button buttonDelete = findViewById(R.id.buttonDelete);
         buttonDelete.setOnClickListener(view -> apagarAnimal());
 
-        //vamos associar o método pesquisarUser() ao clique no botao search
         Button buttonSearch = findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +65,7 @@ public class AdminActivity extends AppCompatActivity  implements
 
                 executorService.execute(() -> {
                     ArrayList<Animal> animals;
-                    if(nome.trim().isEmpty())
+                    if (nome.trim().isEmpty())
                         animals = new ArrayList<>(db.animalDao().getAll());
                     else
                         animals = new ArrayList<>(db.animalDao().findByName(nome));
@@ -83,7 +80,7 @@ public class AdminActivity extends AppCompatActivity  implements
 
     }
 
-    private boolean camposEstaoVazios(){
+    private boolean camposEstaoVazios() {
 
         boolean[] checkCampos = {
                 radioCao.isChecked() || radioGato.isChecked(),
@@ -94,10 +91,10 @@ public class AdminActivity extends AppCompatActivity  implements
                 !editInstituicao.getText().toString().trim().isEmpty()
         };
 
-        for(boolean campo: checkCampos)
-            if(!campo){
+        for (boolean campo : checkCampos)
+            if (!campo) {
                 Toast.makeText(AdminActivity.this,
-                        "ERRO: Ainda falta informação por adicionar",
+                        getResources().getText(R.string.erro_campos_vazios).toString(),
                         Toast.LENGTH_SHORT).show();
                 return true;
             }
@@ -107,7 +104,6 @@ public class AdminActivity extends AppCompatActivity  implements
 
     private void guardarAnimal() throws NumberFormatException {
 
-        //validar os campos para verificar se estão preenchidos
         if (camposEstaoVazios())
             return;
 
@@ -116,16 +112,19 @@ public class AdminActivity extends AppCompatActivity  implements
         String nome = editNome.getText().toString().trim();
 
         int idade = 0;
+
         try {
             idade = Integer.parseInt(editIdade.getText().toString().trim());
-            if(idade < 0)
+            if (idade < 0)
                 throw new NumberFormatException(getResources()
                         .getText(R.string.erro_idade_menor_que_zero).toString());
-        }catch(NumberFormatException e){
+
+        } catch (NumberFormatException e) {
             Toast.makeText(this, e.getMessage(),
                     Toast.LENGTH_SHORT).show();
             return;
         }
+
         // Se for macho então não é fêmea e vice-versa
         String genero = radioMacho.isChecked() ? "Macho" : "Fêmea";
         String raca = editRaca.getText().toString().trim();
@@ -140,7 +139,7 @@ public class AdminActivity extends AppCompatActivity  implements
         executorService.execute(() -> {
             List<Animal> animais = db.animalDao().getAll();
 
-            int indiceUpdate = searchAnimalByName(animais, nome);
+            int indiceUpdate = procurarAnimalPeloNome(animais, nome);
 
             // Se já existir um animal com esse nome, é atualizado os seus dados
             if (indiceUpdate != -1) {
@@ -160,7 +159,7 @@ public class AdminActivity extends AppCompatActivity  implements
         });
     }
 
-    private int searchAnimalByName(List<Animal> list, String nomeAnimal) {
+    private int procurarAnimalPeloNome(List<Animal> list, String nomeAnimal) {
         int foundIndex = -1;
 
         for (Animal currentAnimal : list)
@@ -176,7 +175,7 @@ public class AdminActivity extends AppCompatActivity  implements
 
         executorService.execute(() -> {
             List<Animal> animais = db.animalDao().getAll();
-            int indiceDelete = searchAnimalByName(animais, nome);
+            int indiceDelete = procurarAnimalPeloNome(animais, nome);
 
             if (indiceDelete != -1) {
 
@@ -187,17 +186,16 @@ public class AdminActivity extends AppCompatActivity  implements
                     Toast.makeText(this, getResources().getText(R.string.animal_apagado).toString(),
                             Toast.LENGTH_SHORT).show();
                 });
-            } else {
+            } else
                 runOnUiThread(() ->
                         Toast.makeText(this, getResources().getText(R.string.animal_nao_encontrado).toString(),
                                 Toast.LENGTH_SHORT).show()
                 );
-            }
         });
     }
 
     private void mostrarAnimal(Animal animal) {
-        //obter referencias para widgets
+
         if (animal == null) {
             radioCao.setChecked(false);
             radioGato.setChecked(false);
@@ -212,7 +210,7 @@ public class AdminActivity extends AppCompatActivity  implements
             return;
         }
 
-        switch(animal.getTipoAnimal()){
+        switch (animal.getTipoAnimal()) {
             case "Cão":
                 radioCao.setChecked(true);
                 radioGato.setChecked(false);
@@ -225,7 +223,7 @@ public class AdminActivity extends AppCompatActivity  implements
         editNome.setText((CharSequence) animal.getNomeAnimal());
         editIdade.setText((CharSequence) String.valueOf(animal.getIdade()));
 
-        switch(animal.getGenero()){
+        switch (animal.getGenero()) {
             case "Macho":
                 radioMacho.setChecked(true);
                 radioFemea.setChecked(false);
@@ -241,28 +239,8 @@ public class AdminActivity extends AppCompatActivity  implements
         editInstituicao.setText((CharSequence) animal.getInstituicao());
     }
 
-    private void pesquisarAnimal() {
-        String nome = editNome.getText().toString();
-
-        executorService.execute(() -> {
-            List<Animal> users = db.animalDao().getAll();
-            int indiceDelete = searchAnimalByName(users, nome);
-
-            if (indiceDelete != -1)
-                runOnUiThread(() ->
-                        Toast.makeText(this, getResources().getText(R.string.animal_encontrado).toString(),
-                                Toast.LENGTH_SHORT).show()
-                );
-            else
-                runOnUiThread(() ->
-                        Toast.makeText(this, getResources().getText(R.string.animal_nao_encontrado).toString(),
-                                Toast.LENGTH_SHORT).show()
-                );
-        });
-    }
-
     @Override
-    public void onAnimalSeleced(Animal animal) {
+    public void apresentarAnimalSelecionado(Animal animal) {
         mostrarAnimal(animal);
         Toast.makeText(this, animal.getNomeAnimal(), Toast.LENGTH_LONG).show();
     }

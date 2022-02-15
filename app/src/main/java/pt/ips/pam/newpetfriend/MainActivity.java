@@ -34,32 +34,32 @@ public class MainActivity extends AppCompatActivity {
         Button btnGato = (Button) findViewById(R.id.buttonGato);
         Button btnAmbos = (Button) findViewById(R.id.buttonAmbos);
         Button btnMapa = (Button) findViewById(R.id.buttonMapa);
-        Intent intent = new Intent(this, AnimalListActivity.class);
-        Intent intentMap = new Intent(this, MapsNewPetFriend.class);
+Intent intent = new Intent(this, AnimalListActivity.class);
+Intent intentMap = new Intent(this, MapsNewPetFriend.class);
 
-        btnCao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                intent.putExtra(AnimalListActivity.ANIMAL_TYPE, "Cão");
-                startActivity(intent);
-            }
-        });
+btnCao.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        intent.putExtra(AnimalListActivity.TIPO_ANIMAL, "Cão");
+        startActivity(intent);
+    }
+});
 
-        btnGato.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                intent.putExtra(AnimalListActivity.ANIMAL_TYPE, "Gato");
-                startActivity(intent);
-            }
-        });
+btnGato.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        intent.putExtra(AnimalListActivity.TIPO_ANIMAL, "Gato");
+        startActivity(intent);
+    }
+});
 
-        btnAmbos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                intent.putExtra(AnimalListActivity.ANIMAL_TYPE, "ambos");
-                startActivity(intent);
-            }
-        });
+btnAmbos.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        intent.putExtra(AnimalListActivity.TIPO_ANIMAL, "ambos");
+        startActivity(intent);
+    }
+});
 
         btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,11 +73,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         Bundle extras = getIntent().getExtras();
-        if(extras.getString(CURRENT_USER).equals("admin@ips.pt"))
+        if (extras.getString(CURRENT_USER).equals("admin@ips.pt"))
             getMenuInflater().inflate(R.menu.menu, menu);
 
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

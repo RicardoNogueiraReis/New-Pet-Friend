@@ -71,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         return true;
-
     }
 
     private boolean camposEstaoPreenchidos(EditText email, EditText password){

@@ -16,10 +16,7 @@ public class AnimalListDialogFragment extends DialogFragment {
     private static final String ARG_ANIMALS = "animals";
     private List<Animal> animals;
     private AnimalListDialogFragmentListener listener;
-    /*
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     */
+
     public static AnimalListDialogFragment newInstance(ArrayList<Animal> animals) {
         AnimalListDialogFragment fragment = new AnimalListDialogFragment();
         Bundle args = new Bundle();
@@ -30,7 +27,7 @@ public class AnimalListDialogFragment extends DialogFragment {
     }
 
     public interface AnimalListDialogFragmentListener {
-        public void onAnimalSeleced(Animal animal);
+        public void apresentarAnimalSelecionado(Animal animal);
     }
 
     @Override
@@ -40,13 +37,15 @@ public class AnimalListDialogFragment extends DialogFragment {
             animals = getArguments().getParcelableArrayList(ARG_ANIMALS);
     }
 
+
+    // Lista de animais, apresentada na pesquisa na AdminActivity
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new AlertDialog.Builder(getActivity())
-                .setTitle(R.string.animal_list)
+                .setTitle(getResources().getText(R.string.animal_list).toString())
                 .setAdapter(new AnimalListAdapter(getActivity(), animals), (dialog, which) -> {
-                    listener.onAnimalSeleced(animals.get(which));
+                    listener.apresentarAnimalSelecionado(animals.get(which));
                     this.dismiss();
                 }).create();
     }

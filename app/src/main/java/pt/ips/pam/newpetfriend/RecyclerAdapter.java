@@ -22,19 +22,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     private Activity activity;
 
 
-    public RecyclerAdapter(ArrayList<Animal> animalList, Activity activity){
+    public RecyclerAdapter(ArrayList<Animal> animalList, Activity activity) {
         this.animalList = animalList;
         this.activity = activity;
 
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         private ConstraintLayout animalLinha;
         private TextView nomeTexto;
         private TextView idadeTexto;
         private TextView tipoTexto;
 
-        public MyViewHolder(final View view){
+        public MyViewHolder(final View view) {
             super(view);
             nomeTexto = view.findViewById(R.id.textViewNome);
             idadeTexto = view.findViewById(R.id.textViewIdade);

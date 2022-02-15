@@ -1,16 +1,11 @@
 package pt.ips.pam.newpetfriend;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,7 +20,7 @@ public class AnimalListActivity extends AppCompatActivity {
     private AppDatabase db;
     private ExecutorService executorService;
 
-    public static final String ANIMAL_TYPE = "ANIMAL_TYPE";
+    public static final String TIPO_ANIMAL = "TIPO_ANIMAL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +37,8 @@ public class AnimalListActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
 
         executorService.execute(() -> {
-            String animalFiltro = extras.getString(ANIMAL_TYPE);
-            switch(animalFiltro){
+            String animalFiltro = extras.getString(TIPO_ANIMAL);
+            switch (animalFiltro) {
                 case "ambos":
                     animalList = new ArrayList<>(db.animalDao().getAll());
                     break;
@@ -57,27 +52,29 @@ public class AnimalListActivity extends AppCompatActivity {
         });
 
         executorService.shutdown();
-        try{
+        try {
             executorService.awaitTermination(2L, TimeUnit.SECONDS);
-            if(executorService.isShutdown())
+            if (executorService.isShutdown())
                 setAdapter();
-            else{
+            else {
                 executorService.shutdown();
                 setAdapter();
             }
-        }
-        catch(java.lang.InterruptedException e){
-
+        } catch (java.lang.InterruptedException e) {
+            Toast.makeText(this,
+                    getResources().getText(R.string.erro_inesperado).toString(),
+                    Toast.LENGTH_SHORT).show();
         }
 
     }
 
-    private void setAdapter(){
-        RecyclerAdapter adapter = new RecyclerAdapter(animalList, this);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
-    }
+    // Cria o LinearLayout para implementar as linhas dos registos da base de dados
+private void setAdapter() {
+    RecyclerAdapter adapter = new RecyclerAdapter(animalList, this);
+    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+    recyclerView.setLayoutManager(layoutManager);
+    recyclerView.setItemAnimator(new DefaultItemAnimator());
+    recyclerView.setAdapter(adapter);
+}
 
 }

@@ -40,6 +40,10 @@
     <string name="title_activity_maps_new_pet_friend" translatable="false">MapsNewPetFriend</string>
     <string name="localizacao_de_instituicoes">Localização de Instituições</string>
 
+    <!-- Admin Activity -->
+    <string name="erro_campos_vazios">ERRO: Ainda falta informação por adicionar</string>
+    <string name="erro_inesperado">ERRO: Ocorreu um erro inesperado</string>
+
     <!-- BD -->
     <string name="idade">Idade</string>
     <string name="nome">Nome</string>
