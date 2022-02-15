@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         Button btnCao = (Button) findViewById(R.id.buttonCao);
         Button btnGato = (Button) findViewById(R.id.buttonGato);
         Button btnAmbos = (Button) findViewById(R.id.buttonAmbos);
-        Intent intent = new Intent(MainActivity.this, AnimalListActivity.class);
+        Button btnMapa = (Button) findViewById(R.id.buttonMapa);
+        Intent intent = new Intent(this, AnimalListActivity.class);
+        Intent intentMap = new Intent(this, MapsNewPetFriend.class);
 
         btnCao.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentMap);
+            }
+        });
     }
 
     @Override
@@ -71,10 +80,6 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
         int id = item.getItemId();
         if (id == R.id.admin) {
             Intent intent = new Intent(MainActivity.this, AdminActivity.class);

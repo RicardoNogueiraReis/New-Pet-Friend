@@ -18,7 +18,7 @@
     <string name="erro_utilizador_ja_existe">ERROR: User already exists</string>
 
     <string name="efetue_login_conta_criada">Login with the registered account</string>
-    <string name="intro">NewPetFriend looks for a family to our animals, giving to them a new opportunity for happiness</string>
+    <string name="intro">NewPetFriend aims to look for a family to our animals, giving them a new opportunity to be happy</string>
     <string name="erro_email_invalido">ERROR: Inserted Email is not valid</string>
     <string name="idade">Age</string>
     <string name="nome">Name</string>
@@ -55,5 +55,6 @@
     <string name="castradoIndividual">Neutered:</string>
     <string name="instituicaoIndividual">Instituition:</string>
     <string name="animal">Animal:</string>
+    <string name="localizacao_de_instituicoes">Location of Institutions</string>
 
 </resources>

@@ -38,6 +38,7 @@
     <string name="imageAmbos" translatable="false">ambos</string>
     <string name="imagegato" translatable="false">imageGato</string>
     <string name="title_activity_maps_new_pet_friend" translatable="false">MapsNewPetFriend</string>
+    <string name="localizacao_de_instituicoes">Localização de Instituições</string>
 
     <!-- BD -->
     <string name="idade">Idade</string>
